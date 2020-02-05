@@ -4,10 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class authController extends CI_Controller {
        public function __construct() {
            parent::__construct();
-           $this->load->model('user');
-           if(!$this->session->userdata('login')){
-            $this->load->view('admin/login');   
-           }
+           $this->load->model('user');           
        }
        /*Funcion al abrir login*/
        public function index()
@@ -24,6 +21,7 @@ class authController extends CI_Controller {
             $dataPassword = $this->input->post("password");
             $result = $this->user->dataLogin($dataUser, sha1($dataPassword));
             if(!$result){
+                $this->session->set_flashdata("error","El usuario y/o contraseña son incorrectos");
                 redirect(base_url());
             } else {
                  $data = array(

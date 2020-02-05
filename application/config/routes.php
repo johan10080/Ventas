@@ -56,3 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['iniciarSession'] = 'authController/login';
 $route['home'] = 'dashboardController/index';
 $route['cerrarSession'] = 'authController/logOut';
+$route['categorias/lista'] = 'categoriesController/index';
+
