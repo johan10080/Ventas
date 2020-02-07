@@ -12,7 +12,7 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="" class="btn btn-primary btn-flat">
+                        <a href="<?php echo base_url('categorias/agregar') ?>" class="btn btn-primary btn-flat">
                             <span>Agregar Categoria</span>
                         </a>
                     </div>
@@ -20,7 +20,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-bordered btn-hover">
+                        <table id="example2" class="table table-bordered btn-hover">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -30,27 +30,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if(!empty($categorias)):  ?>
-                                <?php foreach ($categorias as $categoria): ?>
-                                <tr>
-                                    <td><?= $categoria->id ?></td>
-                                    <td><?= $categoria->nombre ?></td>
-                                    <td><?= $categoria->descripcion ?></td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="" class="btn btn-info">
-                                                <span class="fa fa-eye"></span>
-                                            </a>
-                                            <a href="" class="btn btn-warning">
-                                                <span class="fa fa-pencil"></span>
-                                            </a>
-                                            <a href="" class="btn btn-danger">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </div>    
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
+                                <?php if (!empty($categorias)): ?>
+                                    <?php foreach ($categorias as $categoria): ?>
+                                        <tr>
+                                            <td><?= $categoria->id ?></td>
+                                            <td><?= $categoria->nombre ?></td>
+                                            <td><?= $categoria->descripcion ?></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="" class="btn btn-info">
+                                                        <span class="fa fa-eye"></span>
+                                                    </a>
+                                                    <a href="" class="btn btn-warning">
+                                                        <span class="fa fa-pencil"></span>
+                                                    </a>
+                                                    <a href="" class="btn btn-danger">
+                                                        <span class="fa fa-remove"></span>
+                                                    </a>
+                                                </div>    
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 <?php endif; ?>
                             </tbody>
                         </table>

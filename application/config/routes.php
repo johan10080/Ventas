@@ -57,4 +57,6 @@ $route['iniciarSession'] = 'authController/login';
 $route['home'] = 'dashboardController/index';
 $route['cerrarSession'] = 'authController/logOut';
 $route['categorias/lista'] = 'categoriesController/index';
+$route['categorias/crear'] = 'categoriesController/create';
+$route['categorias/agregar'] = 'categoriesController/addCategotires';
 
