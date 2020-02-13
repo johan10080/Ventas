@@ -11,10 +11,7 @@ class authController extends CI_Controller {
 	{	
            if(!$this->session->userdata('login')){
             $this->load->view('admin/login');   
-           }
-            else {
-                redirect(base_url('home'));
-            }
+           }            
 	}        
         public function login(){
             $dataUser= $this->input->post("user");
