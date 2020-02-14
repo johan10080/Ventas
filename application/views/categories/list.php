@@ -41,7 +41,7 @@
                                                     <a href="" class="btn btn-info">
                                                         <span class="fa fa-eye"></span>
                                                     </a>
-                                                    <a href="<?= base_url()?>'Prueba/<?= $categoria->id; ?>" class="btn btn-warning">
+                                                    <a href="<?= base_url()?>categorias/editar/<?= $categoria->id; ?>" class="btn btn-warning">
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
                                                     <a href="" class="btn btn-danger">

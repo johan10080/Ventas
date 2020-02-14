@@ -59,4 +59,5 @@ $route['cerrarSession'] = 'authController/logOut';
 $route['categorias/lista'] = 'categoriesController/index';
 $route['categorias/crear'] = 'categoriesController/create';
 $route['categorias/agregar'] = 'categoriesController/addCategotires';
-
+$route['categorias/editar/(:num)'] = 'categoriesController/edit/$1';
+$route['categorias/actualizar'] = 'categoriesController/update';
