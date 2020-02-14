@@ -18,7 +18,7 @@ class categoriesController extends CI_Controller {
         );
         $this->load->view('layouts/header');
         $this->load->view('layouts/aside');
-        $this->load->view('categories/list', $data);
+        $this->load->view('categories/list',$data);
         $this->load->view('layouts/footer');
     }
 
@@ -71,6 +71,12 @@ class categoriesController extends CI_Controller {
             redirect(base_url().'categorias/actualizar'.$id);
         }
         
+    }
+    public function viewDetail($id){
+       $data = array(
+            'categorias' => $this->categoriesModel->getCategoriesEdit($id)
+        );
+       echo die(var_dump($data));
     }
 
 }
