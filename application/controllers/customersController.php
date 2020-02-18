@@ -2,11 +2,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class categoriesController extends CI_Controller {
+class customersController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('categoriesModel');
+        $this->load->model('customersModel');
         if (!$this->session->userdata('login')) {
             $this->load->view('admin/login');
         }
@@ -14,19 +14,19 @@ class categoriesController extends CI_Controller {
 
     public function index() {
         $data = array(
-            'categorias' => $this->categoriesModel->getCategories()
+            'customers' => $this->customersModel->getcustomers()
         );
         $this->load->view('layouts/header');
         $this->load->view('layouts/aside');
-        $this->load->view('categories/list',$data);
+        $this->load->view('customers/list',$data);
         $this->load->view('layouts/footer');
     }
 
-    public function addCategotires() {
+    public function addCustomers() {
 
         $this->load->view('layouts/header');
         $this->load->view('layouts/aside');
-        $this->load->view('categories/create');
+        $this->load->view('customers/create');
         $this->load->view('layouts/footer');
     }
     
@@ -38,12 +38,12 @@ class categoriesController extends CI_Controller {
             'descripcion' => $description,
             'estado' => '1'
         );
-        if($this->categoriesModel->createCategories($data)){
-            redirect(base_url('categorias/lista'));
+        if($this->customersModel->createCustomers($data)){
+            redirect(base_url('customers/lista'));
         }
         else{
             $this->session->set_flashdata('Error','No se pudo crear un nuevo comentario');
-            redirect(base_url('categorias/agregar'));
+            redirect(base_url('customers/agregar'));
         }
         return $data;
     }

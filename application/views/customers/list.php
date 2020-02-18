@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Lista         
-            <small>Categorias</small>
+            <small>Clientes</small>
         </h1>
     </section>
     <!-- Main content -->
@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <a href="<?php echo base_url('categorias/agregar') ?>" class="btn btn-primary btn-flat">
-                            <span>Agregar Categoria</span>
+                            <span>Agregar Clientes</span>
                         </a>
                     </div>
                 </div>
@@ -22,29 +22,35 @@
                     <div class="col-md-12">
                         <table id="example1" class="table table-bordered btn-hover">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>Descripciones</th>
+                                <tr>          
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Telefono</th>
+                                    <th>Direccion</th>
+                                    <th>ruc</th>
+                                    <th>Empresa</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (!empty($categorias)): ?>
-                                    <?php foreach ($categorias as $categoria): ?>
+                                <?php if (!empty($customers)): ?>
+                                    <?php foreach ($customers as $customer): ?>
                                         <tr>
-                                            <td><?= $categoria->id ?></td>
-                                            <td><?= $categoria->nombre ?></td>
-                                            <td><?= $categoria->descripcion ?></td>
+                                            <td><?= $customer->nombres ?></td>
+                                            <td><?= $customer->apellidos ?></td>
+                                            <td><?= $customer->telefono ?></td>
+                                            <td><?= $customer->direccion ?></td>
+                                            <td><?= $customer->ruc ?></td>
+                                            <td><?= $customer->empresa ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-view" value="<?= $categoria->id; ?>" data-toggle="modal" data-target="#modalInfoCategorie">
+                                                    <button type="button" class="btn btn-info btn-view" value="<?= $customer->id; ?>" data-toggle="modal" data-target="#modalInfoCategorie">
                                                                  <span class="fa fa-search"></span>
                                                             </button>
-                                                            <a href="<?= base_url() ?>categorias/editar/<?= $categoria->id; ?>" class="btn btn-warning">
+                                                            <a href="<?= base_url() ?>categorias/editar/<?= $customer->id; ?>" class="btn btn-warning">
                                                                 <span class="fa fa-pencil"></span>
                                                             </a>
-                                                            <a href="<?= base_url() ?>categorias/eliminar/<?= $categoria->id; ?>" class="btn btn-danger btn-remove">
+                                                            <a href="<?= base_url() ?>categorias/eliminar/<?= $customer->id; ?>" class="btn btn-danger btn-remove">
                                                                 <span class="fa fa-remove"></span>
                                                             </a>
                                                 </div>    
@@ -86,4 +92,5 @@
 <!-- /.modal -->
 </div>
 <!-- /.content-wrapper -->
+
 
