@@ -31,13 +31,22 @@ class customersController extends CI_Controller {
     }
     
     public function create(){
-        $name = $this->input->post('name');
+        $names = $this->input->post('names');
+        $surnames = $this->input->post('surnames');
+        $phone = $this->input->post('phone');
+        $ruc = $this->input->post('ruc');
+        $business = $this->input->post('business');
         $description = $this->input->post('description');
+        $address = $this->input->post('address');
         $data = array(
-            'nombre' => $name,
-            'descripcion' => $description,
+            'nombres' => $names,
+            'apellidos' => $surnames,
+            'direccion' => $address,
+            'telefono' => $phone,
+            'ruc' => $ruc,
+            'empresa' => $business,
             'estado' => '1'
-        );
+        );        
         if($this->customersModel->createCustomers($data)){
             redirect(base_url('customers/lista'));
         }
@@ -47,43 +56,52 @@ class customersController extends CI_Controller {
         }
         return $data;
     }
-    public function edit($idCategorie){
+    public function edit($idCustomers){
         $data = array(
-            'categorias' => $this->categoriesModel->getCategoriesEdit($idCategorie)
+            'customers' => $this->customersModel->getCustomersEdit($idCustomers)
         );
         $this->load->view('layouts/header');
         $this->load->view('layouts/aside');
-        $this->load->view('categories/edit',$data);
+        $this->load->view('customers/edit',$data);
         $this->load->view('layouts/footer');
     }
     public function update(){
-        $id = $this->input->post('idCategoria');
-        $name = $this->input->post('name');
+        $id = $this->input->post('idCustomers');
+        $names = $this->input->post('names');
+        $surnames = $this->input->post('surnames');
+        $phone = $this->input->post('phone');
+        $ruc = $this->input->post('ruc');
+        $business = $this->input->post('business');
         $description = $this->input->post('description');
+        $address = $this->input->post('address');
         $data = array(
-            'nombre' => $name,
-            'descripcion' => $description
+            'nombres' => $names,
+            'apellidos' => $surnames,
+            'direccion' => $address,
+            'telefono' => $phone,
+            'ruc' => $ruc,
+            'empresa' => $business
         );
-        if($this->categoriesModel->updateCategorie($id,$data)){
-            redirect(base_url('categorias/lista'));
+        if($this->customersModel->updateCustomers($id,$data)){
+            redirect(base_url('customers/lista'));
         }else{
             $this->session->set_flashdata('Error','No se pudo actualizar la categoria');
-            redirect(base_url().'categorias/actualizar'.$id);
+            redirect(base_url().'customers/actualizar'.$id);
         }
         
     }
     public function viewDetail($id){
        $data = array(
-            'categorias' => $this->categoriesModel->getCategoriesEdit($id)
+            'customers' => $this->customersModel->getCustomersEdit($id)
         );
-       $this->load->view('categories/view',$data);
+       $this->load->view('customers/view',$data);
     }
     public function delete($id) {
         $data = array(
             'estado' => '0'
         );
          $this->categoriesModel->updateCategorie($id,$data);
-            echo 'categorias/lista';
+            echo 'customers/lista';
         
     }
 

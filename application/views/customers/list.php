@@ -12,7 +12,7 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="<?php echo base_url('categorias/agregar') ?>" class="btn btn-primary btn-flat">
+                        <a href="<?php echo base_url('customers/agregar') ?>" class="btn btn-primary btn-flat">
                             <span>Agregar Clientes</span>
                         </a>
                     </div>
@@ -47,10 +47,10 @@
                                                     <button type="button" class="btn btn-info btn-view" value="<?= $customer->id; ?>" data-toggle="modal" data-target="#modalInfoCategorie">
                                                                  <span class="fa fa-search"></span>
                                                             </button>
-                                                            <a href="<?= base_url() ?>categorias/editar/<?= $customer->id; ?>" class="btn btn-warning">
+                                                            <a href="<?= base_url() ?>customers/editar/<?= $customer->id; ?>" class="btn btn-warning">
                                                                 <span class="fa fa-pencil"></span>
                                                             </a>
-                                                            <a href="<?= base_url() ?>categorias/eliminar/<?= $customer->id; ?>" class="btn btn-danger btn-remove">
+                                                            <a href="<?= base_url() ?>customers/eliminar/<?= $customer->id; ?>" class="btn btn-danger btn-remove">
                                                                 <span class="fa fa-remove"></span>
                                                             </a>
                                                 </div>    
