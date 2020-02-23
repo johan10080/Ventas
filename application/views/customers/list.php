@@ -20,7 +20,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="example1" class="table table-bordered btn-hover">
+                        <table class="table table-bordered btn-hover dataTable">
                             <thead>
                                 <tr>          
                                     <th>Nombres</th>
@@ -44,13 +44,13 @@
                                             <td><?= $customer->empresa ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-view" value="<?= $customer->id; ?>" data-toggle="modal" data-target="#modalInfoCategorie">
+                                                    <button type="button" class="btn btn-info btn-viewCustomer" value="<?= $customer->id; ?>" data-toggle="modal" data-target="#modalInfoCategorie">
                                                                  <span class="fa fa-search"></span>
                                                             </button>
                                                             <a href="<?= base_url() ?>customers/editar/<?= $customer->id; ?>" class="btn btn-warning">
                                                                 <span class="fa fa-pencil"></span>
                                                             </a>
-                                                            <a href="<?= base_url() ?>customers/eliminar/<?= $customer->id; ?>" class="btn btn-danger btn-remove">
+                                                            <a href="<?= base_url() ?>customers/eliminar/<?= $customer->id; ?>" class="btn btn-danger btn-removeCustomer">
                                                                 <span class="fa fa-remove"></span>
                                                             </a>
                                                 </div>    

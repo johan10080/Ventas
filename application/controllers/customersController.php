@@ -100,8 +100,8 @@ class customersController extends CI_Controller {
         $data = array(
             'estado' => '0'
         );
-         $this->categoriesModel->updateCategorie($id,$data);
-            echo 'customers/lista';
+         $this->customersModel->updateCustomers($id,$data);
+          echo 'customers/lista';
         
     }
 

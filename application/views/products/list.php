@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Lista         
-            <small>Categorias</small>
+            <small>Productos</small>
         </h1>
     </section>
     <!-- Main content -->
@@ -12,8 +12,8 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="<?php echo base_url('categorias/agregar') ?>" class="btn btn-primary btn-flat">
-                            <span>Agregar Categoria</span>
+                        <a href="<?php echo base_url('productos/agregar') ?>" class="btn btn-primary btn-flat">
+                            <span>Agregar Producto</span>
                         </a>
                     </div>
                 </div>
@@ -22,29 +22,37 @@
                     <div class="col-md-12">
                         <table class="table table-bordered btn-hover dataTable">
                             <thead>
-                                <tr>
+                                <tr>          
                                     <th>#</th>
                                     <th>Nombre</th>
-                                    <th>Descripciones</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Codigo</th>
+                                    <th>Categoria</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (!empty($categorias)): ?>
-                                    <?php foreach ($categorias as $categoria): ?>
+                                <?php if (!empty($products)): ?>
+                                    <?php foreach ($products as $product): ?>
                                         <tr>
-                                            <td><?= $categoria->id ?></td>
-                                            <td><?= $categoria->nombre ?></td>
-                                            <td><?= $categoria->descripcion ?></td>
+                                            <td><?= $product->idProducto ?></td>
+                                            <td><?= $product->nombreProducto ?></td>
+                                            <td><?= $product->descripcion ?></td>
+                                            <td><?= $product->precio ?></td>
+                                            <td><?= $product->stock ?></td>
+                                            <td><?= $product->codigo ?></td>
+                                            <td><?= $product->nombreCategoria ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-view" value="<?= $categoria->id; ?>" data-toggle="modal" data-target="#modalInfoCategorie">
+                                                    <button type="button" class="btn btn-info btn-viewProducts" value="<?= $product->idProducto; ?>" data-toggle="modal" data-target="#modalInfoProducts">
                                                                  <span class="fa fa-search"></span>
                                                             </button>
-                                                            <a href="<?= base_url() ?>categorias/editar/<?= $categoria->id; ?>" class="btn btn-warning">
+                                                            <a href="<?= base_url() ?>productos/editar/<?= $product->idProducto; ?>" class="btn btn-warning">
                                                                 <span class="fa fa-pencil"></span>
                                                             </a>
-                                                            <a href="<?= base_url() ?>categorias/eliminar/<?= $categoria->id; ?>" class="btn btn-danger btn-remove">
+                                                            <a href="<?= base_url() ?>productos/eliminar/<?= $product->idProducto; ?>" class="btn btn-danger btn-removeProducts">
                                                                 <span class="fa fa-remove"></span>
                                                             </a>
                                                 </div>    
@@ -63,13 +71,13 @@
     </section>
     <!-- /.content -->
 <!--modal para detalles-->    
-<div class="modal fade" id="modalInfoCategorie">
+<div class="modal fade" id="modalInfoProducts">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Informacion de Categoria</h4>
+                <h4 class="modal-title">Informacion de Productos</h4>
             </div>
             <div class="modal-body">
                                
@@ -86,4 +94,5 @@
 <!-- /.modal -->
 </div>
 <!-- /.content-wrapper -->
+
 
