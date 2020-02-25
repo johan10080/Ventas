@@ -49,34 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'authController';
+$route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-$route['iniciarSession'] = 'authController/login';
-$route['home'] = 'dashboardController/index';
-$route['cerrarSession'] = 'authController/logOut';
-//
-$route['categorias/lista'] = 'categoriesController/index';
-$route['categorias/crear'] = 'categoriesController/create';
-$route['categorias/agregar'] = 'categoriesController/addCategotires';
-$route['categorias/editar/(:num)'] = 'categoriesController/edit/$1';
-$route['categorias/actualizar'] = 'categoriesController/update';
-$route['categorias/detalles/(:num)'] = 'categoriesController/viewDetail/$1';
-$route['categorias/eliminar/(:num)'] = 'categoriesController/delete/$1';
-//
-$route['customers/lista'] = 'customersController/index';
-$route['customers/crear'] = 'customersController/create';
-$route['customers/agregar'] = 'customersController/addCustomers';
-$route['customers/editar/(:num)'] = 'customersController/edit/$1';
-$route['customers/actualizar'] = 'customersController/update';
-$route['customers/detalles/(:num)'] = 'customersController/viewDetail/$1';
-$route['customers/eliminar/(:num)'] = 'customersController/delete/$1';
-//
-$route['productos/lista'] = 'productsController/index';
-$route['productos/crear'] = 'productsController/create';
-$route['productos/agregar'] = 'productsController/addProducts';
-$route['productos/editar/(:num)'] = 'productsController/edit/$1';
-$route['productos/actualizar'] = 'productsController/update';
-$route['productos/detalles/(:num)'] = 'productsController/viewDetail/$1';
-$route['productos/eliminar/(:num)'] = 'productsController/delete/$1';
